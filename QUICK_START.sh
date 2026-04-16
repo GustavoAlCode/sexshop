@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ============================================================================
+# Sexshop Project - Quick Start Guide
+# ============================================================================
+
+echo "🌟 Bem-vindo ao Projeto Sexshop Refatorado e Dockerizado!"
+echo ""
+echo "Escolha uma opção:"
+echo ""
+echo "1️⃣  Iniciar em DESENVOLVIMENTO (com Hot Reload)"
+echo "   npm run docker:dev"
+echo "   Acesse: http://localhost:5173"
+echo ""
+echo "2️⃣  Iniciar em PRODUÇÃO (com Nginx)"
+echo "   npm run docker:prod"
+echo "   Acesse: http://localhost"
+echo ""
+echo "3️⃣  Compilar apenas (sem iniciar)"
+echo "   npm run docker:build"
+echo ""
+echo "4️⃣  Ver logs em tempo real"
+echo "   npm run docker:logs"
+echo ""
+echo "5️⃣  Parar containers"
+echo "   npm run docker:stop"
+echo ""
+echo "6️⃣  Limpeza completa"
+echo "   npm run docker:clean"
+echo ""
+echo "📚 Para mais informações:"
+echo "   - README.md - Start rápido"
+echo "   - DOCKER.md - Guia Docker completo"
+echo "   - PROJECT_STRUCTURE.md - Arquitetura do projeto"
+echo "   - REFACTORING_SUMMARY.md - O que foi feito"
+echo ""
+echo "🚀 Recomendação: Comece com: npm run docker:dev"
+echo ""

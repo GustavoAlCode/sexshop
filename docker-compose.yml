@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+  # Development service
+  web-dev:
+    container_name: sexshop-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - VITE_PORT=5173
+    command: pnpm dev
+    networks:
+      - sexshop-network
+    profiles:
+      - dev
+
+  # Production service with Nginx
+  web-prod:
+    container_name: sexshop-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./dist:/usr/share/nginx/html:ro
+    depends_on:
+      - app
+    networks:
+      - sexshop-network
+    profiles:
+      - prod
+
+  # App service
+  app:
+    container_name: sexshop-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - sexshop-network
+    restart: unless-stopped
+    profiles:
+      - prod
+
+networks:
+  sexshop-network:
+    driver: bridge
+
+volumes:
+  node_modules:
