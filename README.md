@@ -333,20 +333,8 @@ Para dúvidas:
 
 ---
 
-## 📄 Licença
 
-Todos os direitos reservados © 2026
 
----
-
-## 🎉 Parabéns!
-
-Seu projeto agora é:
-- ✅ Profissionalmente organizado
-- ✅ Totalmente dockerizado
-- ✅ Pronto para produção
-- ✅ Fácil de manter e escalar
-- ✅ Bem documentado
 
 **Bora começar!** 🚀
   
